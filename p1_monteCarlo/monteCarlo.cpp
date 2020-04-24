@@ -69,7 +69,7 @@ main( int argc, char *argv[ ] ) {
         double time0 = omp_get_wtime();
 
         int numHits = 0;
-#pragma omp parallel for default(none) shared(xcs, ycs, rs, tn) reduction(+:numHits)
+        #pragma omp parallel for default(none) shared(xcs, ycs, rs, tn) reduction(+:numHits)
         for (int n = 0; n < NUMTRIALS; n++) {
             // randomize the location and radius of the circle:
             float xc = xcs[n];
