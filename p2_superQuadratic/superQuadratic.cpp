@@ -14,7 +14,7 @@
 
 // how many nodes per axis:
 #ifndef NUMNODES
-#define NUMNODES    10
+#define NUMNODES    100
 #endif
 
 #define N         4
@@ -56,6 +56,9 @@ int main( int argc, char *argv[ ] ) {
         float fullTileArea = (((XMAX - XMIN) / (float) (NUMNODES - 1)) *
                               ((YMAX - YMIN) / (float) (NUMNODES - 1)));
 
+        float halfTileArea = fullTileArea / 2;
+        float quarterTileArea = fullTileArea / 4;
+
         // sum up the weighted heights into the variable "volume"
         // using an OpenMP for loop and a reduction:
         double time0 = omp_get_wtime();
@@ -65,6 +68,25 @@ int main( int argc, char *argv[ ] ) {
             int iu = i % NUMNODES;   // e.g. 2 % 4 = 0  15 % 4 = 3
             int iv = i / NUMNODES;   // e.g. 2 / 4 = 0  15 / 4 = 3
             float z = Height(iu, iv) * 2;
+
+//            // logic to check if it is a corner node
+//            if((iu == 0 && iv == 0) ||
+//               (iu == NUMNODES - 1 && iv == NUMNODES - 1) ||
+//               (iu == 0 && iv == NUMNODES - 1) ||
+//               (iv == 0 && iu == NUMNODES - 1)) {
+//
+//                volume += z * fullTileArea / 4;
+//
+//            // logic to check if it is a side node
+//            } else if (iu == 0 || iv == 0 || iu == NUMNODES - 1 || iv == NUMNODES - 1) {
+//                volume += z * fullTileArea / 2;
+//
+//            // must be a full size node
+//            } else {
+//
+//                volume += z * fullTileArea;
+//            }
+
             volume += z * fullTileArea;
         }
 
