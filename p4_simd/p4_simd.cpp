@@ -2,9 +2,11 @@
 #include <cmath>
 #include <omp.h>
 #include <xmmintrin.h>
-#define SSE_WIDTH		  4
-#define WIDTH           100
-#define NUMTRIES         10
+#define SSE_WIDTH		        4
+#define WIDTH                   1024 * 1024 * 8
+#define NUMTRIES                10
+#define NUMT                    4
+#define NUM_ELEMENTS_PER_CORE   WIDTH / NUMT
 
 using namespace std;
 
@@ -22,12 +24,13 @@ float MyMultSum(float *a, float *b, int len) {
     float sum = 0.;
 
     for(int i = 0; i < len; i++){
-        sum += a[i] * a[i];
+        sum += a[i] * b[i];
     }
     return sum;
 }
 
 float SimdMulSum( float *a, float *b, int len ){
+
     float sum[4] = { 0., 0., 0., 0. };
     int limit = ( len/SSE_WIDTH ) * SSE_WIDTH;
     register float *pa = a;
@@ -48,6 +51,8 @@ float SimdMulSum( float *a, float *b, int len ){
     return sum[0] + sum[1] + sum[2] + sum[3];
 }
 
+
+
 int main() {
 
 #ifndef _OPENMP
@@ -55,37 +60,93 @@ int main() {
     return 1;
 #endif
 
-    double maxPerformance = 0;
-    float simdSum = 0., mySum = 0.;
+    double maxPerformanceSIMD = 0., maxPerformanceNOSIMD = 0., maxPerformanceSIMDOPENMP;
 
     for (int t = 0; t < NUMTRIES; t++) {
 
-        float A[WIDTH];
-        float B[WIDTH];
+        auto *A = new float[WIDTH];
+        auto *B = new float[WIDTH];
 
         for(int i = 0; i < WIDTH; i++){
 
             A[i] = B[i] = sqrtf( (float) i );
         }
 
-        //printArray(A, WIDTH);
-        //printArray(B, WIDTH);
-
         double time0 = omp_get_wtime();
 
-        simdSum = SimdMulSum(A, B, WIDTH);
-        mySum = MyMultSum(A, B, WIDTH);
+        MyMultSum(A, B, WIDTH);
 
         double time1 = omp_get_wtime();
 
-        double megaMultsPerSecond = (double) (WIDTH * WIDTH) / (time1 - time0) / 1000000.;
+        double megaMultsPerSecond = (double) (WIDTH) / (time1 - time0) / 1000000.;
 
-        if (megaMultsPerSecond > maxPerformance)
-            maxPerformance = megaMultsPerSecond;
+        if (megaMultsPerSecond > maxPerformanceNOSIMD)
+            maxPerformanceNOSIMD = megaMultsPerSecond;
 
+        delete [] A;
+        delete [] B;
     }
 
-    fprintf(stdout,"%d\t%10.2lf\t%10.2lf\t%10.2lf\n", WIDTH, simdSum, mySum, maxPerformance);
+    for (int t = 0; t < NUMTRIES; t++) {
+
+        auto *A = new float[WIDTH];
+        auto *B = new float[WIDTH];
+
+        for(int i = 0; i < WIDTH; i++){
+
+            A[i] = B[i] = sqrtf( (float) i );
+        }
+
+        double time0 = omp_get_wtime();
+
+        SimdMulSum(A, B, WIDTH);
+
+        double time1 = omp_get_wtime();
+
+        double megaMultsPerSecond = (double) (WIDTH) / (time1 - time0) / 1000000.;
+
+        if (megaMultsPerSecond > maxPerformanceSIMD)
+            maxPerformanceSIMD = megaMultsPerSecond;
+
+        delete [] A;
+        delete [] B;
+    }
+
+    for (int t = 0; t < NUMTRIES; t++) {
+
+        auto *A = new float[WIDTH];
+        auto *B = new float[WIDTH];
+
+        omp_set_num_threads(NUMT);
+
+        for(int i = 0; i < WIDTH; i++){
+
+            A[i] = B[i] = sqrtf( (float) i );
+        }
+
+        double time0 = omp_get_wtime();
+
+        float sum = 0;
+
+        #pragma omp parallel default(none) shared(A, B) reduction(+:sum)
+        {
+            int first = omp_get_thread_num() * NUM_ELEMENTS_PER_CORE;
+            sum = SimdMulSum(&A[first], &B[first], NUM_ELEMENTS_PER_CORE);
+        }
+
+        double time1 = omp_get_wtime();
+
+        double megaMultsPerSecond = (double) (WIDTH) / (time1 - time0) / 1000000.;
+
+        if (megaMultsPerSecond > maxPerformanceSIMDOPENMP)
+            maxPerformanceSIMDOPENMP = megaMultsPerSecond;
+
+        delete [] A;
+        delete [] B;
+    }
+
+
+    fprintf(stdout,"%d\t%10.2lf\t%10.2lf\t%10.2lf\n", WIDTH, maxPerformanceNOSIMD, maxPerformanceSIMD, maxPerformanceSIMDOPENMP);
 
 
     return 0;
