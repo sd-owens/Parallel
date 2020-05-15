@@ -3,10 +3,15 @@
 #include <omp.h>
 #include <xmmintrin.h>
 #define SSE_WIDTH		        4
-#define WIDTH                   1024 * 1024 * 8
 #define NUMTRIES                10
-#define NUMT                    4
 #define NUM_ELEMENTS_PER_CORE   WIDTH / NUMT
+
+#ifndef NUMT
+#define NUMT                    4
+#endif
+#ifndef WIDTH
+#define WIDTH                   1024 * 1024 * 8
+#endif
 
 using namespace std;
 
