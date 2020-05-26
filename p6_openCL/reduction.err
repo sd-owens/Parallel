@@ -1,0 +1,92 @@
+PrintInfo:
+Number of Platforms = 1
+Platform #0:
+	Name    = 'NVIDIA CUDA'
+	Vendor  = 'NVIDIA Corporation'
+	Version = 'OpenCL 1.2 CUDA 10.1.351'
+	Profile = 'FULL_PROFILE'
+	Number of Devices = 1
+	Device #0:
+		Type = 0x0004 = CL_DEVICE_TYPE_GPU
+		Device Vendor ID = 0x10de (NVIDIA)
+		Device Maximum Compute Units = 80
+		Device Maximum Work Item Dimensions = 3
+		Device Maximum Work Item Sizes = 1024 x 1024 x 64
+		Device Maximum Work Group Size = 1024
+		Device Maximum Clock Frequency = 1530 MHz
+
+Device #0's Extensions:
+cl_khr_global_int32_base_atomics
+cl_khr_global_int32_extended_atomics
+cl_khr_local_int32_base_atomics
+cl_khr_local_int32_extended_atomics
+cl_khr_fp64
+cl_khr_byte_addressable_store
+cl_khr_icd
+cl_khr_gl_sharing
+cl_nv_compiler_options
+cl_nv_device_attribute_query
+cl_nv_pragma_unroll
+cl_nv_copy_opts
+cl_nv_create_buffer
+
+
+
+Selecting the OpenCL Platform and Device:
+I have selected Platform #0, Device #0
+    1024	  32	        32	523776.000	     0.020	GigaMult-ReductionsPerSecond
+    1024	  64	        16	523776.000	     0.022	GigaMult-ReductionsPerSecond
+    1024	 128	         8	523776.000	     0.023	GigaMult-ReductionsPerSecond
+    1024	 256	         4	523776.000	     0.022	GigaMult-ReductionsPerSecond
+    2048	  32	        64	2096128.000	     0.046	GigaMult-ReductionsPerSecond
+    2048	  64	        32	2096128.000	     0.044	GigaMult-ReductionsPerSecond
+    2048	 128	        16	2096128.000	     0.045	GigaMult-ReductionsPerSecond
+    2048	 256	         8	2096128.000	     0.045	GigaMult-ReductionsPerSecond
+    4096	  32	       128	8386560.000	     0.089	GigaMult-ReductionsPerSecond
+    4096	  64	        64	8386560.000	     0.090	GigaMult-ReductionsPerSecond
+    4096	 128	        32	8386560.000	     0.089	GigaMult-ReductionsPerSecond
+    4096	 256	        16	8386560.000	     0.089	GigaMult-ReductionsPerSecond
+    8192	  32	       256	33550336.000	     0.182	GigaMult-ReductionsPerSecond
+    8192	  64	       128	33550336.000	     0.178	GigaMult-ReductionsPerSecond
+    8192	 128	        64	33550336.000	     0.179	GigaMult-ReductionsPerSecond
+    8192	 256	        32	33550336.000	     0.182	GigaMult-ReductionsPerSecond
+   16384	  32	       512	134209536.000	     0.362	GigaMult-ReductionsPerSecond
+   16384	  64	       256	134209536.000	     0.326	GigaMult-ReductionsPerSecond
+   16384	 128	       128	134209536.000	     0.363	GigaMult-ReductionsPerSecond
+   16384	 256	        64	134209536.000	     0.323	GigaMult-ReductionsPerSecond
+   32768	  32	      1024	536859328.000	     0.722	GigaMult-ReductionsPerSecond
+   32768	  64	       512	536854528.000	     0.733	GigaMult-ReductionsPerSecond
+   32768	 128	       256	536854528.000	     0.735	GigaMult-ReductionsPerSecond
+   32768	 256	       128	536854528.000	     0.603	GigaMult-ReductionsPerSecond
+   65536	  32	      2048	2147472000.000	     1.161	GigaMult-ReductionsPerSecond
+   65536	  64	      1024	2147467264.000	     1.407	GigaMult-ReductionsPerSecond
+   65536	 128	       512	2147460352.000	     1.442	GigaMult-ReductionsPerSecond
+   65536	 256	       256	2147450880.000	     1.489	GigaMult-ReductionsPerSecond
+  131072	  32	      4096	8589922816.000	     2.544	GigaMult-ReductionsPerSecond
+  131072	  64	      2048	8589918208.000	     2.429	GigaMult-ReductionsPerSecond
+  131072	 128	      1024	8589911040.000	     2.852	GigaMult-ReductionsPerSecond
+  131072	 256	       512	8589901824.000	     2.799	GigaMult-ReductionsPerSecond
+  262144	  32	      8192	34358859776.000	     3.786	GigaMult-ReductionsPerSecond
+  262144	  64	      4096	34359721984.000	     5.073	GigaMult-ReductionsPerSecond
+  262144	 128	      2048	34359713792.000	     5.323	GigaMult-ReductionsPerSecond
+  262144	 256	      1024	34359705600.000	     5.561	GigaMult-ReductionsPerSecond
+  524288	  32	     16384	137438076928.000	     2.147	GigaMult-ReductionsPerSecond
+  524288	  64	      8192	137435463680.000	     2.214	GigaMult-ReductionsPerSecond
+  524288	 128	      4096	137438928896.000	     2.368	GigaMult-ReductionsPerSecond
+  524288	 256	      2048	137438920704.000	     1.971	GigaMult-ReductionsPerSecond
+ 1048576	  32	     32768	549754961920.000	     3.959	GigaMult-ReductionsPerSecond
+ 1048576	  64	     16384	549752340480.000	     4.362	GigaMult-ReductionsPerSecond
+ 1048576	 128	      8192	549741920256.000	     4.568	GigaMult-ReductionsPerSecond
+ 1048576	 256	      4096	549755781120.000	     3.687	GigaMult-ReductionsPerSecond
+ 2097152	  32	     65536	2199022469120.000	     6.451	GigaMult-ReductionsPerSecond
+ 2097152	  64	     32768	2199019847680.000	     7.753	GigaMult-ReductionsPerSecond
+ 2097152	 128	     16384	2199009361920.000	     8.400	GigaMult-ReductionsPerSecond
+ 2097152	 256	      8192	2198967681024.000	     8.412	GigaMult-ReductionsPerSecond
+ 4194304	  32	    131072	8796092497920.000	     9.219	GigaMult-ReductionsPerSecond
+ 4194304	  64	     65536	8796089876480.000	    12.112	GigaMult-ReductionsPerSecond
+ 4194304	 128	     32768	8796079390720.000	    14.317	GigaMult-ReductionsPerSecond
+ 4194304	 256	     16384	8796037447680.000	    14.265	GigaMult-ReductionsPerSecond
+ 8388608	  32	    262144	35184887988224.000	    11.345	GigaMult-ReductionsPerSecond
+ 8388608	  64	    131072	35184369991680.000	    15.659	GigaMult-ReductionsPerSecond
+ 8388608	 128	     65536	35184359505920.000	    19.186	GigaMult-ReductionsPerSecond
+ 8388608	 256	     32768	35184317562880.000	    20.364	GigaMult-ReductionsPerSecond

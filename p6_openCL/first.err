@@ -1,0 +1,172 @@
+PrintInfo:
+Number of Platforms = 1
+Platform #0:
+	Name    = 'NVIDIA CUDA'
+	Vendor  = 'NVIDIA Corporation'
+	Version = 'OpenCL 1.2 CUDA 10.1.351'
+	Profile = 'FULL_PROFILE'
+	Number of Devices = 1
+	Device #0:
+		Type = 0x0004 = CL_DEVICE_TYPE_GPU
+		Device Vendor ID = 0x10de (NVIDIA)
+		Device Maximum Compute Units = 80
+		Device Maximum Work Item Dimensions = 3
+		Device Maximum Work Item Sizes = 1024 x 1024 x 64
+		Device Maximum Work Group Size = 1024
+		Device Maximum Clock Frequency = 1530 MHz
+
+Device #0's Extensions:
+cl_khr_global_int32_base_atomics
+cl_khr_global_int32_extended_atomics
+cl_khr_local_int32_base_atomics
+cl_khr_local_int32_extended_atomics
+cl_khr_fp64
+cl_khr_byte_addressable_store
+cl_khr_icd
+cl_khr_gl_sharing
+cl_nv_compiler_options
+cl_nv_device_attribute_query
+cl_nv_pragma_unroll
+cl_nv_copy_opts
+cl_nv_create_buffer
+
+
+
+Selecting the OpenCL Platform and Device:
+I have selected Platform #0, Device #0
+    1024	   8	       128	     0.018	GigaMultsPerSecond
+    1024	  16	        64	     0.019	GigaMultsPerSecond
+    1024	  32	        32	     0.014	GigaMultsPerSecond
+    1024	  64	        16	     0.021	GigaMultsPerSecond
+    1024	 128	         8	     0.020	GigaMultsPerSecond
+    1024	 256	         4	     0.018	GigaMultsPerSecond
+    1024	 512	         2	     0.022	GigaMultsPerSecond
+    1024	1024	         1	     0.016	GigaMultsPerSecond
+    2048	   8	       256	     0.045	GigaMultsPerSecond
+    2048	  16	       128	     0.037	GigaMultsPerSecond
+    2048	  32	        64	     0.027	GigaMultsPerSecond
+    2048	  64	        32	     0.036	GigaMultsPerSecond
+    2048	 128	        16	     0.036	GigaMultsPerSecond
+    2048	 256	         8	     0.034	GigaMultsPerSecond
+    2048	 512	         4	     0.040	GigaMultsPerSecond
+    2048	1024	         2	     0.037	GigaMultsPerSecond
+    4096	   8	       512	     0.077	GigaMultsPerSecond
+    4096	  16	       256	     0.082	GigaMultsPerSecond
+    4096	  32	       128	     0.051	GigaMultsPerSecond
+    4096	  64	        64	     0.073	GigaMultsPerSecond
+    4096	 128	        32	     0.076	GigaMultsPerSecond
+    4096	 256	        16	     0.083	GigaMultsPerSecond
+    4096	 512	         8	     0.089	GigaMultsPerSecond
+    4096	1024	         4	     0.074	GigaMultsPerSecond
+    8192	   8	      1024	     0.095	GigaMultsPerSecond
+    8192	  16	       512	     0.142	GigaMultsPerSecond
+    8192	  32	       256	     0.153	GigaMultsPerSecond
+    8192	  64	       128	     0.142	GigaMultsPerSecond
+    8192	 128	        64	     0.160	GigaMultsPerSecond
+    8192	 256	        32	     0.145	GigaMultsPerSecond
+    8192	 512	        16	     0.099	GigaMultsPerSecond
+    8192	1024	         8	     0.147	GigaMultsPerSecond
+   16384	   8	      2048	     0.297	GigaMultsPerSecond
+   16384	  16	      1024	     0.338	GigaMultsPerSecond
+   16384	  32	       512	     0.314	GigaMultsPerSecond
+   16384	  64	       256	     0.304	GigaMultsPerSecond
+   16384	 128	       128	     0.214	GigaMultsPerSecond
+   16384	 256	        64	     0.212	GigaMultsPerSecond
+   16384	 512	        32	     0.256	GigaMultsPerSecond
+   16384	1024	        16	     0.291	GigaMultsPerSecond
+   32768	   8	      4096	     0.538	GigaMultsPerSecond
+   32768	  16	      2048	     0.590	GigaMultsPerSecond
+   32768	  32	      1024	     0.601	GigaMultsPerSecond
+   32768	  64	       512	     0.637	GigaMultsPerSecond
+   32768	 128	       256	     0.703	GigaMultsPerSecond
+   32768	 256	       128	     0.433	GigaMultsPerSecond
+   32768	 512	        64	     0.614	GigaMultsPerSecond
+   32768	1024	        32	     0.654	GigaMultsPerSecond
+   65536	   8	      8192	     0.972	GigaMultsPerSecond
+   65536	  16	      4096	     0.848	GigaMultsPerSecond
+   65536	  32	      2048	     0.873	GigaMultsPerSecond
+   65536	  64	      1024	     0.847	GigaMultsPerSecond
+   65536	 128	       512	     1.396	GigaMultsPerSecond
+   65536	 256	       256	     0.939	GigaMultsPerSecond
+   65536	 512	       128	     0.835	GigaMultsPerSecond
+   65536	1024	        64	     1.191	GigaMultsPerSecond
+  131072	   8	     16384	     1.304	GigaMultsPerSecond
+  131072	  16	      8192	     2.486	GigaMultsPerSecond
+  131072	  32	      4096	     2.612	GigaMultsPerSecond
+  131072	  64	      2048	     2.834	GigaMultsPerSecond
+  131072	 128	      1024	     2.806	GigaMultsPerSecond
+  131072	 256	       512	     2.948	GigaMultsPerSecond
+  131072	 512	       256	     2.950	GigaMultsPerSecond
+  131072	1024	       128	     2.974	GigaMultsPerSecond
+  262144	   8	     32768	     2.682	GigaMultsPerSecond
+  262144	  16	     16384	     3.680	GigaMultsPerSecond
+  262144	  32	      8192	     4.628	GigaMultsPerSecond
+  262144	  64	      4096	     4.342	GigaMultsPerSecond
+  262144	 128	      2048	     5.553	GigaMultsPerSecond
+  262144	 256	      1024	     5.737	GigaMultsPerSecond
+  262144	 512	       512	     5.663	GigaMultsPerSecond
+  262144	1024	       256	     5.345	GigaMultsPerSecond
+  524288	   8	     65536	     1.505	GigaMultsPerSecond
+  524288	  16	     32768	     1.665	GigaMultsPerSecond
+  524288	  32	     16384	     2.040	GigaMultsPerSecond
+  524288	  64	      8192	     2.084	GigaMultsPerSecond
+  524288	 128	      4096	     1.326	GigaMultsPerSecond
+  524288	 256	      2048	     0.034	GigaMultsPerSecond
+  524288	 512	      1024	     1.760	GigaMultsPerSecond
+  524288	1024	       512	     1.767	GigaMultsPerSecond
+ 1048576	   8	    131072	     1.727	GigaMultsPerSecond
+ 1048576	  16	     65536	     2.302	GigaMultsPerSecond
+ 1048576	  32	     32768	     2.907	GigaMultsPerSecond
+ 1048576	  64	     16384	     2.779	GigaMultsPerSecond
+ 1048576	 128	      8192	     3.316	GigaMultsPerSecond
+ 1048576	 256	      4096	     2.946	GigaMultsPerSecond
+ 1048576	 512	      2048	     2.385	GigaMultsPerSecond
+ 1048576	1024	      1024	     1.821	GigaMultsPerSecond
+ 2097152	   8	    262144	     0.117	GigaMultsPerSecond
+ 2097152	  16	    131072	     3.555	GigaMultsPerSecond
+ 2097152	  32	     65536	     5.233	GigaMultsPerSecond
+ 2097152	  64	     32768	     5.392	GigaMultsPerSecond
+ 2097152	 128	     16384	     0.166	GigaMultsPerSecond
+ 2097152	 256	      8192	     5.498	GigaMultsPerSecond
+ 2097152	 512	      4096	     4.802	GigaMultsPerSecond
+ 2097152	1024	      2048	     5.144	GigaMultsPerSecond
+ 4194304	   8	    524288	     3.313	GigaMultsPerSecond
+ 4194304	  16	    262144	     5.487	GigaMultsPerSecond
+ 4194304	  32	    131072	     0.226	GigaMultsPerSecond
+ 4194304	  64	     65536	     9.146	GigaMultsPerSecond
+ 4194304	 128	     32768	     0.784	GigaMultsPerSecond
+ 4194304	 256	     16384	     5.290	GigaMultsPerSecond
+ 4194304	 512	      8192	    10.272	GigaMultsPerSecond
+ 4194304	1024	      4096	     8.330	GigaMultsPerSecond
+ 8388608	   8	   1048576	     3.775	GigaMultsPerSecond
+ 8388608	  16	    524288	     6.939	GigaMultsPerSecond
+ 8388608	  32	    262144	    10.970	GigaMultsPerSecond
+ 8388608	  64	    131072	    15.006	GigaMultsPerSecond
+ 8388608	 128	     65536	    15.308	GigaMultsPerSecond
+ 8388608	 256	     32768	    15.213	GigaMultsPerSecond
+ 8388608	 512	     16384	    15.461	GigaMultsPerSecond
+ 8388608	1024	      8192	    15.524	GigaMultsPerSecond
+16777216	   8	   2097152	     4.320	GigaMultsPerSecond
+16777216	  16	   1048576	     7.940	GigaMultsPerSecond
+16777216	  32	    524288	    13.545	GigaMultsPerSecond
+16777216	  64	    262144	    21.012	GigaMultsPerSecond
+16777216	 128	    131072	    22.533	GigaMultsPerSecond
+16777216	 256	     65536	    23.513	GigaMultsPerSecond
+16777216	 512	     32768	    23.493	GigaMultsPerSecond
+16777216	1024	     16384	    22.703	GigaMultsPerSecond
+33554432	   8	   4194304	     4.073	GigaMultsPerSecond
+33554432	  16	   2097152	     8.581	GigaMultsPerSecond
+33554432	  32	   1048576	    14.705	GigaMultsPerSecond
+33554432	  64	    524288	    16.902	GigaMultsPerSecond
+33554432	 128	    262144	     0.043	GigaMultsPerSecond
+33554432	 256	    131072	    24.692	GigaMultsPerSecond
+33554432	 512	     65536	     0.042	GigaMultsPerSecond
+33554432	1024	     32768	     0.042	GigaMultsPerSecond
+67108864	   8	   8388608	     4.588	GigaMultsPerSecond
+67108864	  16	   4194304	     8.812	GigaMultsPerSecond
+67108864	  32	   2097152	    16.441	GigaMultsPerSecond
+67108864	  64	   1048576	    28.564	GigaMultsPerSecond
+67108864	 128	    524288	    34.000	GigaMultsPerSecond
+67108864	 256	    262144	    34.195	GigaMultsPerSecond
+67108864	 512	    131072	    34.235	GigaMultsPerSecond
+67108864	1024	     65536	    33.830	GigaMultsPerSecond
