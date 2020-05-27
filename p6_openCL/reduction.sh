@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # select device and print gpu information to console
-g++ -std=c++11 -o printinfo printinfo.cpp /usr/local/apps/cuda/cuda-10.1/lib64/libOpenCL.so.1.1 -lm -fopenmp
+g++ -std=c++11 -o printinfo printinfo.cpp /System/Library/Frameworks/OpenCL.framework/Versions/A/OpenCL -lm -Xpreprocessor -fopenmp -lomp
 ./printinfo
 
 # values for NUM_ELEMENTS
@@ -12,7 +12,7 @@ do
 	for s in 32 64 128 256
 	do
 		# echo LOCAL_SIZE = $s
-		g++ -std=c++11 -DNUM_ELEMENTS=$b -DLOCAL_SIZE=$s -o reduction reduction.cpp /usr/local/apps/cuda/cuda-10.1/lib64/libOpenCL.so.1.1 -lm -fopenmp
+		g++ -std=c++11 -DNUM_ELEMENTS=$b -DLOCAL_SIZE=$s -o reduction reduction.cpp /System/Library/Frameworks/OpenCL.framework/Versions/A/OpenCL -lm -Xpreprocessor -fopenmp -lomp
 		./reduction
 	done
 done
