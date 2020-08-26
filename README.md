@@ -1,2 +1,3 @@
-# Parallel
-Repo for my parallel programming projects in openMP, openCL, and CUDA.
+# Parallel Programming
+
+Repo for my parallel programming projects in linux with SIMD using openMP, openCL, and CUDA.
